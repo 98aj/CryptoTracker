@@ -1,0 +1,14 @@
+.coinInfo{
+    width: 95%;
+    padding: 1rem 1.5rem;
+    background-color: var(--darkgrey);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.para a{
+    color: var(--blue);
+    text-decoration: underline;
+}

@@ -1,0 +1,6 @@
+.selectCoin{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0rem 1.5rem;
+}

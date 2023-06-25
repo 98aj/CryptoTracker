@@ -1,0 +1,49 @@
+.list-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0rem 1.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    
+}
+
+.list-row:hover{
+    background-color: var(--darkgrey);
+}
+
+.list-row td{
+    text-align: left;
+    width: 18%;
+}
+
+.flex-img{
+    width: 3rem !important;
+    margin-right: 1.5rem;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+@media screen and (max-width:1000px) {
+    .td-icon{
+        display: none;
+    }
+}
+
+@media screen and (max-width:850px) {
+    .market-voulme{
+        display: none;
+    }
+    .list-row{
+        width: 100%;
+        
+
+    }
+}

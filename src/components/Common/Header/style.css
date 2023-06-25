@@ -1,0 +1,58 @@
+.navbar{
+  
+    background-color: var(--black);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 3rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;    
+}
+
+.link{
+    color: var(--grey);
+    font-size: 0.9rem;
+}
+
+.link:hover{
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.drawer{
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    
+    .link{
+        color: var(--grey);
+        font-size: 0.9rem;
+    }
+    
+    .links{
+        display: none;
+    }
+
+    .drawer{
+        display: block;
+    }
+
+    .drawer-innerDiv{
+        background-color: var(--black);
+        width: 40vw;
+        height: 100vh;
+        padding: 1.5rem;
+        
+    }
+  }

@@ -1,0 +1,113 @@
+.flex-parent{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 3rem;
+    align-items: start;
+}
+
+.track-crypto, .real-time{
+    margin: 0;
+    font-size: 6rem;
+
+}
+
+.track-crypto:hover {
+    color: var(--black);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--white);
+    transition: all 0.3s;
+}
+
+.real-time{
+    color: var(--blue)
+}
+
+.para-info{
+    color: var(--grey);
+}
+
+.btn-flex{
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    align-items: center;
+
+}
+
+.right-div{
+    width: 50%;
+    position: relative;
+    
+}
+
+.iphone{
+    position: absolute;
+    z-index: 100;
+    width: 50%;
+    right: 0;
+    min-width: 350px;
+    
+}
+
+.gradient{
+    position: absolute;
+    width: 40%;
+    right: 0;
+    top: 6rem;
+    min-width: 280px;
+}
+
+@media screen and (max-width : 1000px) {
+    .iphone{
+        
+        min-width: 300px;
+        
+    }
+    
+    .gradient{
+        
+        min-width: 250px;
+    }
+}
+
+@media screen and (max-width : 800px) {
+
+    .flex-parent{
+        flex-direction: column;
+        
+    }
+
+ .track-crypto, .real-time{
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .track-crypto{
+        -webkit-text-stroke-width: 1.5px;
+    }
+
+    .para-info{
+        text-align: center;
+    }
+    
+    .btn-flex{
+        justify-content: center;
+    }
+    
+
+    .right-div{
+        display: block;
+        margin: auto;
+        margin-top: 5rem;
+    }
+
+    .iphone{
+        left: -3rem;
+    }
+
+    .gradient{
+        left: -1rem;
+    }
+}
+

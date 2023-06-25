@@ -7,7 +7,7 @@ export default function Watchlist() {
   return (
     <div>
       <Header/>
-      <TabsComponent/>
+    
     </div>
   )
 }

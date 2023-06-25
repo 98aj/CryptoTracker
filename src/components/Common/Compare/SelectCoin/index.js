@@ -35,7 +35,7 @@ export default function SelectCoin({crypto1, crypto2, handleCryptoChange}) {
         onChange={(event) => handleCryptoChange(event, false)}
         sx={style}
       >
-        {allCoins.map((coin) => (
+        {allCoins.filter((item)=> item.id!= crypto2).map((coin) => (
           <MenuItem value={coin.id}>{coin.id}</MenuItem>
         ))}
       </Select>
@@ -46,7 +46,7 @@ export default function SelectCoin({crypto1, crypto2, handleCryptoChange}) {
         onChange={(event) => handleCryptoChange(event, true)}
         sx={style}
       >
-        {allCoins.map((coin) => (
+        {allCoins.filter((item)=> item.id!=crypto1).map((coin) => (
           <MenuItem value={coin.id}>{coin.id}</MenuItem>
         ))}
       </Select>

@@ -3,6 +3,7 @@ import { Line } from 'react-chartjs-2'
 import './style.css'
 import Chart from 'chart.js/auto';
 import SelectDays from '../SelectDays';
+import {convertDate} from '../../../functions/convertDate'
 
 export default function CoinChart({chartData, priceType, multiAxis}) {
     const options = {
@@ -17,8 +18,22 @@ export default function CoinChart({chartData, priceType, multiAxis}) {
         interaction: {
             mode: 'index',
             intersect:false,
-        }
-    }
+        },
+        scales: {
+          crypto1:{
+            type:'linear',
+            display: true,
+            position:'left',
+          },
+          
+          crypto2:{
+            type:'linear',
+            display: true,
+            position:'right',
+          },
+          
+        },
+    } 
   return (
     <div className='chartDisplay'>
        

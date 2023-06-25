@@ -9,21 +9,26 @@ import { settingChartData } from "../functions/settingChartData";
 import Loader from "../components/Common/Loader";
 import List from "../components/Dashbord/List";
 import CoinInfo from "../components/Coin/CoinInfo/CoinInfo";
+import CoinChart from "../components/Coin/CoinChart";
 
 export default function ComparePage() {
   const [crypto1, setCrypto1] = useState("bitcoin");
-  const [crypto2, setCrypto2] = useState("bitcoin");
+  const [crypto2, setCrypto2] = useState("tether");
   const [cryptoData1, setCryptoData1] = useState({});
   const [cryptoData2, setCryptoData2] = useState({});
   const [days, setDays] = useState(7);
   const [isLoader, setIsLoader] = useState(true);
+  const [chartData, setChartData] = useState();
 
   useEffect(() => {
     getData()
   }, []);
 
-  const handleChange = (event) => {
+  const handleChange = async (event) => {
     setDays(event.target.value);
+    const prices1 = await coinPrices(crypto1, days);
+      const prices2 = await coinPrices(crypto2, days);
+      settingChartData(setChartData, prices1, prices2)
   };
 
   async function getData() {
@@ -40,6 +45,7 @@ export default function ComparePage() {
     if (data1 && data2) {
       const prices1 = await coinPrices(crypto1, days);
       const prices2 = await coinPrices(crypto2, days);
+      settingChartData(setChartData, prices1, prices2)
      setIsLoader(false)
     }
   }
@@ -87,6 +93,7 @@ export default function ComparePage() {
       </div>
       <List coin={cryptoData1} />
       <List coin={cryptoData2} />
+      <CoinChart chartData={chartData} priceType={'prices'} multiAxis={true}/>
       <CoinInfo heading={cryptoData1.name} desc={cryptoData1.desc} />
       <CoinInfo heading={cryptoData2.name} desc={cryptoData2.desc} />
       </>)}

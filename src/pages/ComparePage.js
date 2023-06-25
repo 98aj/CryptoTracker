@@ -47,19 +47,19 @@ export default function ComparePage() {
       const data = await coinData(event.target.value);
       if (data) {
         coinObject(setCryptoData2, data);
-        setIsLoader(false);
+       
       }
     } else {
       setCrypto1(event.target.value);
       const data = await coinData(event.target.value);
       if (data) {
         coinObject(setCryptoData1, data);
-        setIsLoader(false);
+        
       }
     }
     const prices1 = await coinPrices(crypto1, days);
     const prices2 = await coinPrices(crypto2, days);
-    console.log(prices1, prices2);
+    setIsLoader(false);
   };
 
   return (

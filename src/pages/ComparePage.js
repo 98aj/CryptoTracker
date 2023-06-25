@@ -17,7 +17,7 @@ export default function ComparePage() {
   const [isLoader, setIsLoader] = useState(true);
 
   useEffect(() => {
-  
+    getData()
   }, []);
 
   const handleChange = (event) => {
@@ -25,6 +25,7 @@ export default function ComparePage() {
   };
 
   async function getData() {
+    setIsLoader(true)
     const data1 = await coinData(crypto1);
     const data2 = await coinData(crypto2);
     if (data1) {
@@ -37,16 +38,17 @@ export default function ComparePage() {
     if (data1 && data2) {
       const prices1 = await coinPrices(crypto1, days);
       const prices2 = await coinPrices(crypto2, days);
-      console.log(prices1, prices2);
+     setIsLoader(false)
     }
   }
 
   const handleCryptoChange = async (event, isCoin2) => {
+    setIsLoader(true)
     if (isCoin2) {
       setCrypto2(event.target.value);
       const data = await coinData(event.target.value);
       if (data) {
-        coinObject(setCryptoData2, data);
+        coinObject(setCryptoData2, data);         
        
       }
     } else {
@@ -54,12 +56,14 @@ export default function ComparePage() {
       const data = await coinData(event.target.value);
       if (data) {
         coinObject(setCryptoData1, data);
-        
+       
       }
     }
     const prices1 = await coinPrices(crypto1, days);
     const prices2 = await coinPrices(crypto2, days);
-    setIsLoader(false);
+  
+    setIsLoader(false)
+    
   };
 
   return (

@@ -7,6 +7,8 @@ import { coinObject } from "../functions/coinObject";
 import { coinPrices } from "../functions/coinPrices";
 import { settingChartData } from "../functions/settingChartData";
 import Loader from "../components/Common/Loader";
+import List from "../components/Dashbord/List";
+import CoinInfo from "../components/Coin/CoinInfo/CoinInfo";
 
 export default function ComparePage() {
   const [crypto1, setCrypto1] = useState("bitcoin");
@@ -80,7 +82,13 @@ export default function ComparePage() {
           handleCryptoChange={handleCryptoChange}
         />
         <SelectDays days={days} handleChange={handleChange} />
+
+        
       </div>
+      <List coin={cryptoData1} />
+      <List coin={cryptoData2} />
+      <CoinInfo heading={cryptoData1.name} desc={cryptoData1.desc} />
+      <CoinInfo heading={cryptoData2.name} desc={cryptoData2.desc} />
       </>)}
     </div>
     

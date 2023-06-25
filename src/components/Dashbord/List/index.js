@@ -5,6 +5,8 @@ import "./style.css";
 import { Tooltip } from "@mui/material";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
+import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
 
 export default function List({ coin }) {
   return (
@@ -81,6 +83,7 @@ export default function List({ coin }) {
           <p className="text-right">{coin.total_volume.toLocaleString()}</p>
         </td>
       </Tooltip>
+      <StarRoundedIcon/>
     </motion.tr>
     </Link>
   );

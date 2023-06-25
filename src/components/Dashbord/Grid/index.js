@@ -4,6 +4,7 @@ import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
 
 export default function Grid({ coin }) {
   return (
@@ -23,6 +24,7 @@ export default function Grid({ coin }) {
           <p className="coin-symbol">{coin.symbol}</p>
           <p className="coin-name">{coin.name}</p>
         </div>
+        <StarRoundedIcon/>
       </div>
 
       {coin.price_change_percentage_24h_in_currency > 0 ? (

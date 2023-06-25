@@ -41,7 +41,7 @@ export default function MainComponent() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <Link to=''><Button text={"dashbord"} /></Link>
+          <Link to='/dashbord'><Button text={"dashbord"} /></Link>
           <Link><Button text={"share"} outline={true} /></Link>
         </motion.div>
       </div>
